@@ -1,8 +1,10 @@
+import MainContainer from "../layouts/MainLayout";
+
 const Index = () => {
     return (
-        <div>
+        <MainContainer keywords={"main"} title={"Main"}>
             <p>pet</p>
-        </div>
+        </MainContainer>
     )
 }
 
