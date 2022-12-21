@@ -1,4 +1,4 @@
-import MainContainer from "../layouts/MainLayout";
+import MainContainer from "../layouts/MainLayout/mainLayout";
 
 const Index = () => {
     return (

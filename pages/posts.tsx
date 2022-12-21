@@ -1,11 +1,12 @@
-import MainContainer from "../layouts/MainLayout";
+import MainContainer from "../layouts/MainLayout/mainLayout";
 import LinkAdapter from "../components/LinkAdapter";
+import { IPost } from "../types/Post";
 
-const Posts = ({posts}) => {
+const Posts = ({ posts }) => {
 
     return (
         <MainContainer keywords={"posts"} title={"Main"}>
-            {posts.map(({id, title}) => (
+            {posts.map(({id, title}: IPost) => (
                 <li key={id}>
                     <LinkAdapter link={`/posts/${id}`} text={title} />
                 </li>
@@ -16,8 +17,8 @@ const Posts = ({posts}) => {
 
 Posts.getInitialProps = async (ctx) => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const posts = await res.json()
-    return { posts }
+    const posts: IPost[] = await res.json()
+    return { posts };
 }
 
 export default Posts;

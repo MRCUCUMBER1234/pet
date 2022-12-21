@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import MainContainer from "../../layouts/MainLayout";
+import MainContainer from "../../layouts/MainLayout/mainLayout";
 
 export default function Post ({ post: {title, body } }) {
     const router  = useRouter();
