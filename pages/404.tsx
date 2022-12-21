@@ -1,7 +1,3 @@
-export default function Error () {
-    return (
-        <p>
-            oops... (error)
-        </p>
-    )
+export default function Error() {
+    return <p>oops... (error)</p>;
 }
