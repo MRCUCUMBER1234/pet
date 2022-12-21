@@ -1,11 +1,9 @@
-import MainContainer from "../layouts/MainLayout/mainLayout";
+import MainContainer from '../layouts/MainLayout';
 
-const Index = () => {
-    return (
-        <MainContainer keywords={"main"} title={"Main"}>
-            <p>pet</p>
-        </MainContainer>
-    )
-}
+const Index = () => (
+    <MainContainer keywords="main" title="Main">
+        <p>pet</p>
+    </MainContainer>
+);
 
 export default Index;
