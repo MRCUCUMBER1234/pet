@@ -1,7 +1,13 @@
+@value black10 from './variables.scss';
+
 .navigation {
   display: flex;
   gap: 12px;
-  a {
-    color: cornflowerblue;
-  }
+  border-bottom: 1px solid black10;
+  height: 72px;
+  width: 100%;
+  align-items: center;
+  padding: 32px;
+  position: fixed;
+  backdrop-filter: blur(5px);
 }

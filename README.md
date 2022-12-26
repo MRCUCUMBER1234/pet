@@ -1,5 +1,5 @@
 # pet
 pet proj
 
-# local lunch: 
+# local launch: 
 npm run dev

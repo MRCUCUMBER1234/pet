@@ -1,0 +1,11 @@
+@value black10 from './variables.scss';
+
+.drawer {
+  right: 0;
+  position: sticky;
+  z-index: 1;
+  width: 300px;
+  //border-left: 1px solid black10;
+  top: 72px;
+  padding: 32px;
+}
