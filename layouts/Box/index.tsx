@@ -4,6 +4,7 @@ const Box = ({ children, ...props }) => {
         alignItems = 'flex-start',
         justifyContent = 'flex-start',
         flexWrap = 'wrap',
+        flexGrow = 0,
         width = 'auto',
         height = 'auto',
         gap = 0,
@@ -21,10 +22,11 @@ const Box = ({ children, ...props }) => {
                 justifyContent,
                 flexWrap,
                 gap,
-                margin: `${my}px ${mx}`,
-                padding: `${py}px ${px}`,
+                margin: `${my}px ${mx}px`,
+                padding: `${py}px ${px}px`,
                 width,
                 height,
+                flexGrow,
             }}
         >
             {children}

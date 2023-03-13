@@ -1,17 +1,13 @@
 import { useRouter } from 'next/router';
 
-import MainContainer from '../../layouts/MainLayout';
+import Post from '../../components/Post';
 
-export default function Post({ post: { title, body }, writer: { name } }) {
-    const router = useRouter();
+export default function PostPage({ post, writer }) {
+    const {
+        query: { id },
+    } = useRouter();
 
-    return (
-        <MainContainer keywords="posts" title={title}>
-            {`${router.query.id} - ${title}`}
-            <p>{body}</p>
-            <p>{name}</p>
-        </MainContainer>
-    );
+    return <Post postId={id} post={post} writer={writer} />;
 }
 
 export async function getServerSideProps({ params: { id } }) {
