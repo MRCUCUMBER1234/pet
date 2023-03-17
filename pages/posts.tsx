@@ -3,9 +3,9 @@ import ModulePost from '../components/ModulePost';
 import TagList from '../components/TagList';
 
 /** Layouts */
-import MainContainer from '../layouts/MainLayout';
-import Box from '../layouts/Box';
-import Topic from '../components/Topic';
+import MainContainer from '../shared/ui/layouts/MainLayout';
+import Box from '../shared/ui/layouts/Box';
+import Topic from '../shared/ui/components/Topic';
 
 const PostListPage = ({ posts }) => {
     const chips = ['blue', 'red', 'yellow'];

@@ -1,6 +1,6 @@
-import Topic from '../Topic';
-import Box from '../../layouts/Box';
-import Chip from '../../layouts/Chip';
+import Topic from '../../shared/ui/components/Topic';
+import Box from '../../shared/ui/layouts/Box';
+import Chip from '../../shared/ui/layouts/Chip';
 import styles from '../../styles/TagList.module.scss';
 
 const TagList = ({ chips = [] }) => (

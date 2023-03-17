@@ -1,6 +1,6 @@
 import styles from '../../../styles/PostFooter.module.scss';
-import Typography from '../../../layouts/Typography';
-import Drawer from '../../Drawer';
+import Typography from '../../../shared/ui/layouts/Typography';
+import Drawer from '../../../shared/ui/components/Drawer';
 
 const PostFooter = ({ name }) => (
     <div className={styles.footer}>

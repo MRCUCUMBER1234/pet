@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Navigation from '../../components/Navigation';
-import styles from '../../styles/MainLayout.module.scss';
+import Navigation from '../../../../components/Navigation';
+import styles from '../../../../styles/MainLayout.module.scss';
 
 // @ts-ignore
 const MainContainer = ({ children, keywords, title }) => (

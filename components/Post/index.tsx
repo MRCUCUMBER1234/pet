@@ -1,9 +1,9 @@
 import styles from '../../styles/Post.module.scss';
-import Box from '../../layouts/Box';
-import Typography from '../../layouts/Typography';
-import MainContainer from '../../layouts/MainLayout';
+import Box from '../../shared/ui/layouts/Box';
+import Typography from '../../shared/ui/layouts/Typography';
+import MainContainer from '../../shared/ui/layouts/MainLayout';
 import PostFooter from './PostFooter';
-import BackArrow from '../BackArrow';
+import BackArrow from '../../shared/ui/components/BackArrow';
 
 const Post = ({ post: { title, body }, writer: { name }, postId }) => (
     <MainContainer keywords="posts" title={title}>

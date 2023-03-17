@@ -1,4 +1,4 @@
-import styles from '../../styles/Drawer.module.scss';
+import styles from '../../../../styles/Drawer.module.scss';
 
 const Drawer = () => (
     /* { orientation = 'right'} */
