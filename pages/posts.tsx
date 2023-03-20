@@ -1,6 +1,6 @@
 /** Components */
-import ModulePost from '../components/ModulePost';
-import TagList from '../components/TagList';
+import ModulePost from '../entities/ModulePost/ui/ModulePost';
+import TagList from '../entities/TagList';
 
 /** Layouts */
 import MainContainer from '../shared/ui/layouts/MainLayout';
