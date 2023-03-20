@@ -1,4 +1,4 @@
-import MainContainer from '../layouts/MainLayout';
+import MainContainer from '../shared/ui/layouts/MainLayout';
 
 const Index = () => (
     <MainContainer keywords="main" title="Main">

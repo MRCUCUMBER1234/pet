@@ -1,0 +1,12 @@
+@value black, black50, black80 from 'variables.scss';
+
+a.link{
+    text-decoration: none;
+    color: black50;
+}
+a.link:hover {
+    color: black80;
+}
+a.link.active {
+    color: black;
+}

@@ -1,20 +1,19 @@
 import { useRouter } from 'next/router';
 
-import MainContainer from '../../layouts/MainLayout';
+import Post from '../../entities/Post/ui/Post';
 
-export default function Post({ post: { title, body } }) {
-    const router = useRouter();
+export default function PostPage({ post, writer }) {
+    const {
+        query: { id },
+    } = useRouter();
 
-    return (
-        <MainContainer keywords="posts" title={title}>
-            {`${router.query.id} - ${title}`}
-            <p>{body}</p>
-        </MainContainer>
-    );
+    return <Post postId={id} post={post} writer={writer} />;
 }
 
 export async function getServerSideProps({ params: { id } }) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    const post = await res.json();
-    return { props: { post } };
+    const postRes = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    const post = await postRes.json();
+    const writerRes = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
+    const writer = await writerRes.json();
+    return { props: { post, writer } };
 }
