@@ -9,7 +9,7 @@ const TagList = ({ chips = [] }) => (
             <Topic text="Tags" />
             <Box gap={12} width="100%">
                 {chips.map((chip) => (
-                    <Chip>{chip}</Chip>
+                    <Chip key={chip}>{chip}</Chip>
                 ))}
             </Box>
         </Box>
