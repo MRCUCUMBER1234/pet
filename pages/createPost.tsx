@@ -10,16 +10,13 @@ import Box from '../shared/ui/layouts/Box';
 /** Models */
 import Post from '../entities/Post/model/Post';
 
-/** Interfaces */
-import IPost from '../entities/Post/model';
-
 const CreatePost = () => {
     const [post, setPost] = useState(new Post());
 
-    const onChangeInput = (type: string) => (e) => {
+    const onChangeInput = (type) => (e) => {
         switch (type) {
             default: {
-                setPost((prevPost: IPost) => ({
+                setPost((prevPost) => ({
                     ...prevPost,
                     [type]: e.target.value,
                 }));
