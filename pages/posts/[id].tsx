@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import Post from '../../entities/Post/ui/Post';
+import Post from '../../entities/Post';
 
 export default function PostPage({ post, writer }) {
     const {
