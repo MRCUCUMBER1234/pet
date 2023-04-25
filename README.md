@@ -8,3 +8,5 @@ pet proj
         рас и готово
 
 npm run dev
+
+# project's deploy: https://pet-992d.vercel.app/
