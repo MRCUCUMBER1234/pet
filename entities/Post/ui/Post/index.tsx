@@ -4,9 +4,17 @@ import Typography from '../../../../shared/ui/layouts/Typography';
 import MainContainer from '../../../../shared/ui/layouts/MainLayout';
 import PostFooter from './PostFooter';
 import BackArrow from '../../../../shared/ui/components/BackArrow';
+import IPost from '../../model';
+import IWriter from '../../../Writer/model';
 
-const Post = ({ post: { title, body }, writer: { name }, postId }) => (
-    <MainContainer keywords="posts" title={title}>
+type PostProps = {
+    post: IPost;
+    writer: IWriter;
+    postId: string | string[] | undefined;
+};
+
+const Post = ({ post: { title, body }, writer: { name }, postId }: PostProps) => (
+    <MainContainer keywords={['posts']} title={title}>
         <Box flexDirection="column" gap={24} mx={64} my={64}>
             <BackArrow />
             <p className={styles.post}>{`${postId} - ${title}`}</p>

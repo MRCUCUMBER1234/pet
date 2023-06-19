@@ -1,4 +1,49 @@
-const Box = ({ children, ...props }) => {
+import { ReactNode } from 'react';
+
+type FlexDirection =
+    | 'column'
+    | 'inherit'
+    | '-moz-initial'
+    | 'initial'
+    | 'revert'
+    | 'unset'
+    | 'column-reverse'
+    | 'row'
+    | 'row-reverse'
+    | undefined;
+
+type FlexWrap =
+    | '-moz-initial'
+    | 'inherit'
+    | 'initial'
+    | 'revert'
+    | 'revert-layer'
+    | 'unset'
+    | 'nowrap'
+    | 'wrap'
+    | 'wrap-reverse'
+    | undefined;
+
+interface Box {
+    flexDirection?: FlexDirection;
+    alignItems?: string;
+    justifyContent?: string;
+    flexWrap?: FlexWrap;
+    flexGrow?: number;
+    width?: string;
+    height?: string;
+    gap?: number;
+    mx?: number;
+    my?: number;
+    px?: number;
+    py?: number;
+}
+
+interface BoxProps extends Box {
+    children: ReactNode;
+}
+
+const Box = ({ children, ...props }: BoxProps) => {
     const {
         flexDirection = 'row',
         alignItems = 'flex-start',
