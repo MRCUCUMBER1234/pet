@@ -1,3 +1,4 @@
+// TODO: need ???
 class Post {
     constructor(post) {
         const { id = '', userId = '', title = '', body = '' } = post || {};

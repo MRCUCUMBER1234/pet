@@ -1,5 +1,9 @@
 import styles from '../../../../app/styles/Topic.module.scss';
 
-const Topic = ({ text }) => <p className={styles.topic}>{text}</p>;
+type TopicProps = {
+    text: string;
+};
+
+const Topic = ({ text }: TopicProps) => <p className={styles.topic}>{text}</p>;
 
 export default Topic;

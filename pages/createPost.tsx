@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 /** Components */
 import Topic from '../shared/ui/components/Topic';
@@ -13,7 +13,7 @@ import Post from '../entities/Post/model/Post';
 const CreatePost = () => {
     const [post, setPost] = useState(new Post());
 
-    const onChangeInput = (type) => (e) => {
+    const onChangeInput = (type: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
         switch (type) {
             default: {
                 setPost((prevPost) => ({
@@ -24,11 +24,12 @@ const CreatePost = () => {
         }
     };
 
-    const onSubmit = () => {};
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    const onSubmit = (): void => {};
 
     return (
-        <MainContainer keywords="posts" title="Main">
-            <Box flexWrap="no-wrap">
+        <MainContainer keywords={['posts']} title="Main">
+            <Box flexWrap="nowrap">
                 <Box gap={64} width="100%" px={64} my={64}>
                     <Topic text="Create Post" />
                     <form onSubmit={onSubmit}>

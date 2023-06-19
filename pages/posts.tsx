@@ -7,13 +7,18 @@ import MainContainer from '../shared/ui/layouts/MainLayout';
 import Box from '../shared/ui/layouts/Box';
 import Topic from '../shared/ui/components/Topic';
 import LinkAdapter from '../shared/ui/components/LinkAdapter';
+import IPost from '../entities/Post/model';
 
-const PostListPage = ({ posts }) => {
+type PostListPageProps = {
+    posts: IPost[];
+};
+
+const PostListPage = ({ posts }: PostListPageProps) => {
     const chips = ['blue', 'red', 'yellow'];
 
     return (
-        <MainContainer keywords="posts" title="Main">
-            <Box flexWrap="no-wrap">
+        <MainContainer keywords={['posts']} title="Main">
+            <Box flexWrap="nowrap">
                 <Box gap={64} width="100%" px={64} my={64}>
                     <Topic text="Posts" />
                     <LinkAdapter link="/createPost">Create Post</LinkAdapter>

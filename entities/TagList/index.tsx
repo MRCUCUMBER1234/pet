@@ -3,7 +3,11 @@ import Box from '../../shared/ui/layouts/Box';
 import Chip from '../../shared/ui/layouts/Chip';
 import styles from '../../app/styles/TagList.module.scss';
 
-const TagList = ({ chips = [] }) => (
+type TagListProps = {
+    chips: string[];
+};
+
+const TagList = ({ chips = [] }: TagListProps) => (
     <div className={styles.tagListContainer}>
         <Box gap={24} width="250px" my={64}>
             <Topic text="Tags" />

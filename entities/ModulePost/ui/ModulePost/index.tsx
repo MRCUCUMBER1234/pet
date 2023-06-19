@@ -3,7 +3,13 @@ import Box from '../../../../shared/ui/layouts/Box';
 import Typography from '../../../../shared/ui/layouts/Typography';
 import Drawer from '../../../../shared/ui/components/Drawer';
 
-const ModulePost = ({ link, title, body }) => (
+type ModulePostProps = {
+    link: string;
+    title: string;
+    body: string;
+};
+
+const ModulePost = ({ link, title, body }: ModulePostProps) => (
     <Box flexDirection="column" gap={24}>
         <Drawer />
         <Box>
