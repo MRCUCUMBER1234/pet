@@ -9,7 +9,7 @@ type TagListProps = {
 
 const TagList = ({ chips = [] }: TagListProps) => (
     <div className={styles.tagListContainer}>
-        <Box gap={24} width="250px" my={64}>
+        <Box gap={24} width="250px">
             <Topic text="Tags" />
             <Box gap={12} width="100%">
                 {chips.map((chip) => (

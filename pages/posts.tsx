@@ -19,11 +19,19 @@ const PostListPage = ({ posts }: PostListPageProps) => {
     return (
         <MainContainer keywords={['posts']} title="Main">
             <Box flexWrap="nowrap">
-                <Box gap={64} width="100%" px={64} my={64}>
+                <Box position="sticky" top={64} px={64}>
                     <Topic text="Posts" />
                     <LinkAdapter link="/createPost">Create Post</LinkAdapter>
-                    {posts.map(({ id, title, body }) => (
-                        <ModulePost key={id} link={`/posts/${id}`} title={title} body={body} />
+                </Box>
+                <Box width="100%" px={64}>
+                    {posts.map(({ id, title, body }, index) => (
+                        <ModulePost
+                            key={id}
+                            link={`/posts/${id}`}
+                            title={title}
+                            body={body}
+                            isLast={index === posts.length - 1}
+                        />
                     ))}
                 </Box>
                 <TagList chips={chips} />

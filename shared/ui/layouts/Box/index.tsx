@@ -1,34 +1,11 @@
 import { ReactNode } from 'react';
-
-type FlexDirection =
-    | 'column'
-    | 'inherit'
-    | '-moz-initial'
-    | 'initial'
-    | 'revert'
-    | 'unset'
-    | 'column-reverse'
-    | 'row'
-    | 'row-reverse'
-    | undefined;
-
-type FlexWrap =
-    | '-moz-initial'
-    | 'inherit'
-    | 'initial'
-    | 'revert'
-    | 'revert-layer'
-    | 'unset'
-    | 'nowrap'
-    | 'wrap'
-    | 'wrap-reverse'
-    | undefined;
+import CSS from 'csstype';
 
 interface Box {
-    flexDirection?: FlexDirection;
+    flexDirection?: CSS.Property.FlexDirection;
     alignItems?: string;
     justifyContent?: string;
-    flexWrap?: FlexWrap;
+    flexWrap?: CSS.Property.FlexWrap;
     flexGrow?: number;
     width?: string;
     height?: string;
@@ -37,6 +14,9 @@ interface Box {
     my?: number;
     px?: number;
     py?: number;
+    position?: CSS.Property.Position;
+    top?: number | 'auto';
+    styles?: CSS.Properties;
 }
 
 interface BoxProps extends Box {
@@ -57,6 +37,9 @@ const Box = ({ children, ...props }: BoxProps) => {
         my = 0,
         px = 0,
         py = 0,
+        position = 'static',
+        top = 'auto',
+        styles = {},
     } = props;
     return (
         <div
@@ -72,6 +55,9 @@ const Box = ({ children, ...props }: BoxProps) => {
                 width,
                 height,
                 flexGrow,
+                position,
+                top,
+                ...styles,
             }}
         >
             {children}
