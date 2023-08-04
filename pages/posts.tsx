@@ -1,13 +1,20 @@
 /** Components */
+import Image from 'next/image';
 import ModulePost from '../entities/ModulePost/ui/ModulePost';
 import TagList from '../entities/TagList';
+import Topic from '../shared/ui/components/Topic';
+import LinkAdapter from '../shared/ui/components/LinkAdapter';
 
 /** Layouts */
 import MainContainer from '../shared/ui/layouts/MainLayout';
 import Box from '../shared/ui/layouts/Box';
-import Topic from '../shared/ui/components/Topic';
-import LinkAdapter from '../shared/ui/components/LinkAdapter';
+import Button from '../shared/ui/layouts/Button';
+
+/** Model */
 import IPost from '../entities/Post/model';
+
+/** Assets */
+// import PlusIcon from '../../../../app/public/icons8-plus.svg';
 
 type PostListPageProps = {
     posts: IPost[];
@@ -21,7 +28,9 @@ const PostListPage = ({ posts }: PostListPageProps) => {
             <Box flexWrap="nowrap">
                 <Box position="sticky" top={64} px={64}>
                     <Topic text="Posts" />
-                    <LinkAdapter link="/createPost">Create Post</LinkAdapter>
+                    <LinkAdapter link="/createPost">
+                        <Button isIcon>{/* <Image src={PlusIcon} alt="plus-icon" width={24} height={24} /> */}+</Button>
+                    </LinkAdapter>
                 </Box>
                 <Box width="100%" px={64}>
                     {posts.map(({ id, title, body }, index) => (

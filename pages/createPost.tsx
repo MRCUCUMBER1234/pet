@@ -6,6 +6,7 @@ import Topic from '../shared/ui/components/Topic';
 /** Layouts */
 import MainContainer from '../shared/ui/layouts/MainLayout';
 import Box from '../shared/ui/layouts/Box';
+import Button from '../shared/ui/layouts/Button';
 
 /** Models */
 import Post from '../entities/Post/model/Post';
@@ -36,7 +37,7 @@ const CreatePost = () => {
                         <Box flexDirection="column" gap={24}>
                             <input type="text" value={post.title} onInput={onChangeInput('title')} />
                             <input type="text" value={post.body} onInput={onChangeInput('body')} />
-                            <input type="submit" value="Publish" />
+                            <Button type="submit">Publish</Button>
                         </Box>
                     </form>
                 </Box>

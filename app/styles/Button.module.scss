@@ -1,0 +1,21 @@
+@value black, black80, white from 'variables.scss';
+
+.button {
+  padding: 16px 32px;
+  border-radius: 99em;
+  background-color: black;
+  color: white;
+  font-weight: 800;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black80;
+  color: white;
+}
+
+.buttonIcon {
+  padding: 16px;
+}
