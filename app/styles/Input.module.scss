@@ -1,0 +1,36 @@
+@value red, black15 from 'variables.scss';
+
+.container {
+  width: inherit;
+}
+
+.name {
+  margin: 4px 0;
+}
+
+.input {
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid black15;
+  width: 100%;
+}
+
+.input:focus {
+  color: #212529;
+  border-color: black15;
+}
+
+.textarea {
+  min-height: calc(2.25rem + 120px);
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+}
+
+.error {
+  margin: 4px 0;
+  font-size: 0.8rem;
+  color: red;
+  min-height: 28px;
+}

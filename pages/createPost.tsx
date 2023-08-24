@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /** Components */
-import Topic from '../shared/ui/components/Topic';
+import Form from '../shared/ui/layouts/Form';
+import Input from '../shared/ui/components/Input';
 
 /** Layouts */
 import MainContainer from '../shared/ui/layouts/MainLayout';
@@ -11,36 +12,44 @@ import Button from '../shared/ui/layouts/Button';
 /** Models */
 import Post from '../entities/Post/model/Post';
 
-const CreatePost = () => {
-    const [post, setPost] = useState(new Post());
+/** Utils */
+import { useInput } from '../shared/lib/form';
 
-    const onChangeInput = (type: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-        switch (type) {
-            default: {
-                setPost((prevPost) => ({
-                    ...prevPost,
-                    [type]: e.target.value,
-                }));
-            }
-        }
-    };
+const CreatePost = () => {
+    const title = useInput('', { isEmpty: true, minLength: 5, maxLength: 50 });
+    const body = useInput('', { isEmpty: true, minLength: 50 });
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const onSubmit = (): void => {};
 
     return (
-        <MainContainer keywords={['posts']} title="Main">
-            <Box flexWrap="nowrap">
-                <Box gap={64} width="100%" px={64} my={64}>
-                    <Topic text="Create Post" />
-                    <form onSubmit={onSubmit}>
-                        <Box flexDirection="column" gap={24}>
-                            <input type="text" value={post.title} onInput={onChangeInput('title')} />
-                            <input type="text" value={post.body} onInput={onChangeInput('body')} />
-                            <Button type="submit">Publish</Button>
-                        </Box>
-                    </form>
-                </Box>
+        <MainContainer keywords={['posts']} title="Create post">
+            <Box flexWrap="nowrap" width="100%">
+                <Form onSubmit={onSubmit} title="Create Post">
+                    <Box flexDirection="column" gap={24} width="100%">
+                        <Input
+                            name="Title"
+                            isDirty={title.isDirty}
+                            error={title.error}
+                            value={title.value}
+                            onChange={title.onChange}
+                            onBlur={title.onBlur}
+                        />
+                        <Input
+                            name="Body"
+                            isDirty={body.isDirty}
+                            error={body.error}
+                            value={body.value}
+                            onChange={body.onChange}
+                            onBlur={body.onBlur}
+                            type="textarea"
+                            rows={5}
+                        />
+                        <Button disabled={title.error || body.error} type="submit">
+                            Publish
+                        </Button>
+                    </Box>
+                </Form>
             </Box>
         </MainContainer>
     );

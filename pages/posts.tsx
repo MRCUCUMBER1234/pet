@@ -1,5 +1,4 @@
 /** Components */
-import Image from 'next/image';
 import ModulePost from '../entities/ModulePost/ui/ModulePost';
 import TagList from '../entities/TagList';
 import Topic from '../shared/ui/components/Topic';
@@ -15,6 +14,7 @@ import IPost from '../entities/Post/model';
 
 /** Assets */
 // import PlusIcon from '../../../../app/public/icons8-plus.svg';
+// import { ReactComponent as PlusIcon } from '../../../../app/public/icons8-plus.svg';
 
 type PostListPageProps = {
     posts: IPost[];
@@ -24,12 +24,12 @@ const PostListPage = ({ posts }: PostListPageProps) => {
     const chips = ['blue', 'red', 'yellow'];
 
     return (
-        <MainContainer keywords={['posts']} title="Main">
+        <MainContainer keywords={['posts']} title="Posts">
             <Box flexWrap="nowrap">
                 <Box position="sticky" top={64} px={64}>
                     <Topic text="Posts" />
                     <LinkAdapter link="/createPost">
-                        <Button isIcon>{/* <Image src={PlusIcon} alt="plus-icon" width={24} height={24} /> */}+</Button>
+                        <Button isIcon>{/* <PlusIcon /> */}+</Button> {/* TODO: change to svg */}
                     </LinkAdapter>
                 </Box>
                 <Box width="100%" px={64}>

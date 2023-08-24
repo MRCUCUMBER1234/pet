@@ -34,7 +34,7 @@ const MainContainer = ({ children, keywords = [], title }: MainContainerProps & 
             <title>{title}</title>
         </Head>
         <div className={nunito.className}>
-            <Navigation />
+            <Navigation title={title} />
             <div className={styles.main}>{children}</div>
             <Footer />
         </div>
