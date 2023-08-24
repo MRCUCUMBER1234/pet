@@ -21,7 +21,7 @@ const CreatePost = () => {
     const [, setPost] = useState(new Post());
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const onSubmit = (): void => {
+    const onSubmit = () => {
         setPost(new Post({ id: '', userId: '', title: title.value, body: body.value }));
     };
 
