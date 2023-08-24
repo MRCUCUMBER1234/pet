@@ -10,14 +10,14 @@ import Box from '../shared/ui/layouts/Box';
 import Button from '../shared/ui/layouts/Button';
 
 /** Model */
-// import PostType from '../entities/Post/model';
+import PostType from '../entities/Post/model';
 
 /** Assets */
 // import PlusIcon from '../../../../app/public/icons8-plus.svg';
 // import { ReactComponent as PlusIcon } from '../../../../app/public/icons8-plus.svg';
 
 type PostListPageProps = {
-    posts: { id?: number; userId?: number /** writerId */; title: string; body: string }[];
+    posts: PostType[];
 };
 
 const PostListPage = ({ posts }: PostListPageProps) => {
@@ -33,13 +33,13 @@ const PostListPage = ({ posts }: PostListPageProps) => {
                     </LinkAdapter>
                 </Box>
                 <Box width="100%" px={64}>
-                    {posts.map(({ id, title, body }, index) => (
+                    {posts.map(({ id, title, body }) => (
                         <ModulePost
                             key={id}
                             link={`/posts/${id}`}
                             title={title}
                             body={body}
-                            isLast={index === posts.length - 1}
+                            // isLast={index === posts.length - 1}
                         />
                     ))}
                 </Box>
