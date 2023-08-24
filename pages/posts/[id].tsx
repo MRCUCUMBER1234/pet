@@ -4,10 +4,10 @@ import Post from '../../entities/Post';
 import IPost from '../../entities/Post/model';
 import IWriter from '../../entities/Writer/model';
 
-type PostPageProps = {
+interface PostPageProps {
     post: IPost;
     writer: IWriter;
-};
+}
 
 export default function PostPage({ post, writer }: PostPageProps) {
     const {

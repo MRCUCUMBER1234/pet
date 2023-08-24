@@ -16,9 +16,9 @@ import IPost from '../entities/Post/model';
 // import PlusIcon from '../../../../app/public/icons8-plus.svg';
 // import { ReactComponent as PlusIcon } from '../../../../app/public/icons8-plus.svg';
 
-type PostListPageProps = {
+interface PostListPageProps {
     posts: IPost[];
-};
+}
 
 const PostListPage = ({ posts }: PostListPageProps) => {
     const chips = ['blue', 'red', 'yellow'];
