@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /** Components */
 import Form from '../shared/ui/layouts/Form';
@@ -18,9 +18,12 @@ import { useInput } from '../shared/lib/form';
 const CreatePost = () => {
     const title = useInput('', { isEmpty: true, minLength: 5, maxLength: 50 });
     const body = useInput('', { isEmpty: true, minLength: 50 });
+    const [, setPost] = useState(new Post());
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const onSubmit = (): void => {};
+    const onSubmit = (): void => {
+        setPost(new Post({ id: '', userId: '', title: title.value, body: body.value }));
+    };
 
     return (
         <MainContainer keywords={['posts']} title="Create post">
