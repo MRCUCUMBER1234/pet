@@ -1,3 +1,3 @@
-import { IPost } from './types/Post';
+import { Post as PostType } from './types/Post';
 
-export default IPost;
+export default PostType;

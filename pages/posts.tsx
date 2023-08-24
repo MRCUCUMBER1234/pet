@@ -10,15 +10,15 @@ import Box from '../shared/ui/layouts/Box';
 import Button from '../shared/ui/layouts/Button';
 
 /** Model */
-import IPost from '../entities/Post/model';
+import PostType from '../entities/Post/model';
 
 /** Assets */
 // import PlusIcon from '../../../../app/public/icons8-plus.svg';
 // import { ReactComponent as PlusIcon } from '../../../../app/public/icons8-plus.svg';
 
-interface PostListPageProps {
-    posts: IPost[];
-}
+type PostListPageProps = {
+    posts: PostType[];
+};
 
 const PostListPage = ({ posts }: PostListPageProps) => {
     const chips = ['blue', 'red', 'yellow'];

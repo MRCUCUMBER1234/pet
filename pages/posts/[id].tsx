@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 
 import Post from '../../entities/Post';
-import IPost from '../../entities/Post/model';
+import PostType from '../../entities/Post/model';
 import IWriter from '../../entities/Writer/model';
 
-interface PostPageProps {
-    post: IPost;
+type PostPageProps = {
+    post: PostType;
     writer: IWriter;
-}
+};
 
 export default function PostPage({ post, writer }: PostPageProps) {
     const {
@@ -24,7 +24,7 @@ type Params = {
 };
 
 type Data = {
-    post: IPost;
+    post: PostType;
     writer: IWriter;
 };
 
