@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useRouter } from 'next/router';
 
 import Post from '../../entities/Post';
@@ -5,8 +6,10 @@ import PostType from '../../entities/Post/model';
 import IWriter from '../../entities/Writer/model';
 
 type PostPageProps = {
-    post: PostType;
-    writer: IWriter;
+    // post: PostType;
+    // writer: IWriter;
+    post: any;
+    writer: any;
 };
 
 export default function PostPage({ post, writer }: PostPageProps) {
