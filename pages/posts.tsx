@@ -52,7 +52,7 @@ const PostListPage = ({ posts }: PostListPageProps) => {
     );
 };
 
-PostListPage.getInitialProps = async () => {
+PostListPage.getInitialProps = async (): Promise<{ posts: PostType }> => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const posts = await res.json();
 

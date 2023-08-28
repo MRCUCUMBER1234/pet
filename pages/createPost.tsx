@@ -48,7 +48,7 @@ const CreatePost = () => {
                             type="textarea"
                             rows={5}
                         />
-                        <Button disabled={title.error || body.error} type="submit">
+                        <Button disabled={!!(title.error || body.error)} type="submit">
                             Publish
                         </Button>
                     </Box>
