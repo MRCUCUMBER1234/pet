@@ -29,18 +29,22 @@ const useValidation = (value: string, validations: Validation) => {
                     else setIsEmpty(errorMessages.isEmpty);
                     break;
                 case 'minLength':
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
                     if (value.length < validations[validation]) {
                         setMinLengthError(errorMessages.minLengthError);
                     } else setMinLengthError('');
                     break;
                 case 'maxLength':
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
                     if (value.length > validations[validation]) {
                         setMaxLengthError(errorMessages.maxLengthError);
                     } else setMaxLengthError('');
                     break;
             }
         });
-    }, [validations, value]);
+    }, [errorMessages.isEmpty, errorMessages.maxLengthError, errorMessages.minLengthError, validations, value]);
 
     useEffect(() => {
         setError(isEmpty || minLengthError || maxLengthError);
