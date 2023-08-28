@@ -1,6 +1,6 @@
 export type Post = {
-    id?: number;
-    userId?: number /** writerId */;
+    id?: string;
+    userId?: string /** writerId */;
     title: string;
     body: string;
 };

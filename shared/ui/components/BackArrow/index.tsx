@@ -1,14 +1,17 @@
 import { useRouter } from 'next/router';
 
+/** Components */
+import Button from '../../layouts/Button';
+
 const BackArrow = () => {
     const router = useRouter();
 
     const handleGoBack = () => router.back();
 
     return (
-        <button type="button" onClick={handleGoBack}>
+        <Button type="button" onClick={handleGoBack}>
             Go back
-        </button>
+        </Button>
     );
 };
 

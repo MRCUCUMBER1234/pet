@@ -1,5 +1,5 @@
 import MainContainer from '../shared/ui/layouts/MainLayout';
-import Dino from '../entities/Dino/ui/Dino';
+import Dino from '../entities/dino/ui/Dino';
 
 const Index = () => (
     <MainContainer keywords={['main']} title="Main">

@@ -1,4 +1,5 @@
 import React from 'react';
+// import { redirect } from 'next/navigation';
 
 /** Components */
 import Form from '../shared/ui/layouts/Form';
@@ -10,7 +11,7 @@ import Box from '../shared/ui/layouts/Box';
 import Button from '../shared/ui/layouts/Button';
 
 /** Models */
-// import Post from '../entities/Post/model/Post';
+import { postModel } from '../entities/post/model';
 
 /** Utils */
 import { useInput } from '../shared/lib/form';
@@ -18,19 +19,16 @@ import { useInput } from '../shared/lib/form';
 const CreatePost = () => {
     const title = useInput('', { isEmpty: true, minLength: 5, maxLength: 50 });
     const body = useInput('', { isEmpty: true, minLength: 50 });
-    // const [, setPost] = useState(new Post());
 
-    // const onSubmit = () => {
-    //     setPost(new Post({ id: '', userId: '', title: title.value, body: body.value }));
-    // };
+    const onSubmit = () => {
+        postModel.useAddPost({ id: '', userId: '', title: title.value, body: body.value });
+        // redirect('/posts');
+    };
 
     return (
         <MainContainer keywords={['posts']} title="Create post">
             <Box flexWrap="nowrap" width="100%">
-                <Form
-                    // onSubmit={onSubmit}
-                    title="Create Post"
-                >
+                <Form onSubmit={onSubmit} title="Create Post">
                     <Box flexDirection="column" gap={24} width="100%">
                         <Input
                             name="Title"

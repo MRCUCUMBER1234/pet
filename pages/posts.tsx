@@ -1,8 +1,8 @@
 /* eslint-disable */
 
 /** Components */
-import ModulePost from '../entities/ModulePost/ui/ModulePost';
-import TagList from '../entities/TagList';
+import ModulePost from '../entities/modulePost/ui/ModulePost';
+import TagList from '../entities/tagList';
 import Topic from '../shared/ui/components/Topic';
 import LinkAdapter from '../shared/ui/components/LinkAdapter';
 
@@ -12,15 +12,15 @@ import Box from '../shared/ui/layouts/Box';
 import Button from '../shared/ui/layouts/Button';
 
 /** Model */
-// import PostType from '../entities/Post/model';
+import { PostType, postModel } from '../entities/post/model';
+import { useEffect } from 'react';
 
 /** Assets */
 // import PlusIcon from '../../../../app/public/icons8-plus.svg';
 // import { ReactComponent as PlusIcon } from '../../../../app/public/icons8-plus.svg';
 
 type PostListPageProps = {
-    // posts: PostType[];
-    posts: any;
+    posts: PostType[];
 };
 
 const PostListPage = ({ posts }: PostListPageProps) => {
@@ -55,6 +55,9 @@ const PostListPage = ({ posts }: PostListPageProps) => {
 PostListPage.getInitialProps = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const posts = await res.json();
+
+    postModel.useSetPosts(posts);
+
     return { posts };
 };
 

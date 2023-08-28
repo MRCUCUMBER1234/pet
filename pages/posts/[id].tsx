@@ -1,15 +1,13 @@
 /* eslint-disable */
 import { useRouter } from 'next/router';
 
-import Post from '../../entities/Post';
-import PostType from '../../entities/Post/model';
-import IWriter from '../../entities/Writer/model';
+import Post from '../../entities/post';
+import { PostType } from '../../entities/post/model';
+import WriterType from '../../entities/writer/model';
 
 type PostPageProps = {
-    // post: PostType;
-    // writer: IWriter;
-    post: any;
-    writer: any;
+    post: PostType;
+    writer: WriterType;
 };
 
 export default function PostPage({ post, writer }: PostPageProps) {
@@ -28,7 +26,7 @@ type Params = {
 
 type Data = {
     post: PostType;
-    writer: IWriter;
+    writer: WriterType;
 };
 
 export const getServerSideProps: ({ params: { id } }: Params) => Promise<{ props: Data }> = async ({

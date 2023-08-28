@@ -3,7 +3,10 @@ import styles from '../../../app/styles/Footer.module.scss';
 const Footer = () => (
     <footer className={styles.footer}>
         <p>
-            Created by <span>mr cucumber</span>
+            Created by{' '}
+            <a target="_blank" href="https://github.com/MRCUCUMBER1234">
+                mr cucumber
+            </a>
         </p>
     </footer>
 );

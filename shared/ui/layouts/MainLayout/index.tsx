@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { Nunito } from 'next/font/google';
 import { NextFont } from 'next/dist/compiled/@next/font';
 
-import Navigation from '../../../../entities/Navigation/ui/Navigation';
+import Navigation from '../../../../entities/navigation/ui/Navigation';
 import styles from '../../../../app/styles/MainLayout.module.scss';
 import Footer from '../../../../widgets/ui/Footer';
 

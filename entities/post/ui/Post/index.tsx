@@ -4,12 +4,12 @@ import Typography from '../../../../shared/ui/layouts/Typography';
 import MainContainer from '../../../../shared/ui/layouts/MainLayout';
 import PostFooter from './PostFooter';
 import BackArrow from '../../../../shared/ui/components/BackArrow';
-import IPost from '../../model';
-import IWriter from '../../../Writer/model';
+import { PostType } from '../../model';
+import WriterType from '../../../writer/model';
 
 type PostProps = {
-    post: IPost;
-    writer: IWriter;
+    post: PostType;
+    writer: WriterType;
     postId: string | string[] | undefined;
 };
 

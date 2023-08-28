@@ -8,10 +8,16 @@ type ButtonProps = {
     type?: 'submit' | 'reset' | 'button';
     isIcon?: boolean;
     disabled?: boolean;
+    onClick?: () => void;
 };
 
-const Button = ({ children, type = 'button', isIcon = false, disabled = false }: ButtonProps) => (
-    <button type={type} className={cn(styles.button, { [styles.buttonIcon]: isIcon })} disabled={disabled}>
+const Button = ({ children, type = 'button', isIcon = false, disabled = false, onClick = () => ({}) }: ButtonProps) => (
+    <button
+        type={type}
+        className={cn(styles.button, { [styles.buttonIcon]: isIcon })}
+        disabled={disabled}
+        onClick={onClick}
+    >
         {children}
     </button>
 );
