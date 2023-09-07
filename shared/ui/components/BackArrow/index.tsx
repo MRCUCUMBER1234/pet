@@ -1,9 +1,11 @@
-import { useRouter } from 'next/router';
+'use client';
+
+import { useRouter } from 'next/navigation';
 
 /** Components */
 import Button from '../../layouts/Button';
 
-const BackArrow = () => {
+export default function BackArrow() {
     const router = useRouter();
 
     const handleGoBack = () => router.back();
@@ -13,6 +15,4 @@ const BackArrow = () => {
             Go back
         </Button>
     );
-};
-
-export default BackArrow;
+}

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { useEffect, useState, memo } from 'react';
 
@@ -26,7 +28,8 @@ const NavigationList = ({ title }: NavigationListProps) => (
 
 const MemoizedNavigationList = memo(NavigationList);
 
-const Navigation = ({ title = '' }: NavigationProps) => {
+const Navigation = () => {
+    const title = '';
     const [isShowNavigation, setIsShowNavigation] = useState(true);
     const { y, lastY } = useScroll();
 

@@ -6,11 +6,11 @@ type PostFooterProps = {
     name: string;
 };
 
-const PostFooter = ({ name }: PostFooterProps) => (
-    <div className={styles.footer}>
-        <Drawer />
-        <Typography>{name}</Typography>
-    </div>
-);
-
-export default PostFooter;
+export default function PostFooter({ name }: PostFooterProps) {
+    return (
+        <div className={styles.footer}>
+            <Drawer />
+            <Typography>{name}</Typography>
+        </div>
+    );
+}
