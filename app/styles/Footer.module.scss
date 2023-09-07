@@ -1,7 +1,5 @@
-@value black80, white, green from 'variables.scss';
-
 .footer {
-  background-color: black80;
+  background-color: var(--black80);
   color: white;
   bottom: 0;
   width: 100%;

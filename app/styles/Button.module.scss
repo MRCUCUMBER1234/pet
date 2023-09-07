@@ -1,9 +1,7 @@
-@value black, black80, white, black50 from 'variables.scss';
-
 .button {
   padding: 16px 32px;
   border-radius: 99em;
-  background-color: black;
+  background-color: var(--black);
   color: white;
   font-weight: 800;
   border: none;
@@ -12,7 +10,7 @@
 }
 
 .button:hover {
-  background-color: black80;
+  background-color: var(--black80);
   color: white;
 }
 
@@ -21,6 +19,6 @@
 }
 
 .button:disabled {
-  background-color: black50;
+  background-color: var(--black50);
   cursor: auto;
 }

@@ -1,19 +1,17 @@
-@value black80, black from 'variables.scss';
-
 .body1 {
-  color: black80;
+  color: var(--black80);
 }
 
 .body2 {
-  color: black;
+  color: var(--black);
 }
 
 .h1 {
   font-size: 1.5rem;
-  color: black;
+  color: var(--black);
 }
 
 .h2 {
   font-size: 1.2rem;
-  color: black;
+  color: var(--black);
 }

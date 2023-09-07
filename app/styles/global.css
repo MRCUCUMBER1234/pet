@@ -73,3 +73,18 @@ iframe, video {
     height: 100%;
     width: 100%
 }
+
+:root {
+    --black: rgb(28,28,28);
+    --black80: rgba(28,28,28, 0.8);
+    --black10: rgb(28,28,28, 0.1);
+    --black15: rgb(28,28,28, 0.15);
+    --black50: rgb(28,28,28, 0.5);
+    --black80: rgb(28,28,28, 0.8);
+
+    --white: rgb(255,255,255);
+
+    --green: rgb(147, 197, 114);
+
+    --red: rgb(217, 33, 33);
+}

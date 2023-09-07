@@ -1,9 +1,7 @@
-@value black10 from 'variables.scss';
-
 .drawer {
   right: 0;
   z-index: 1;
   width: 100%;
-  border: 1px solid black10;
+  border: 1px solid var(--black10);
   height: 1px;
 }

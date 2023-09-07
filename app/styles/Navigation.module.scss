@@ -1,9 +1,7 @@
-@value black10 from 'variables.scss';
-
 .navigation {
   display: flex;
   gap: 12px;
-  border-bottom: 1px solid black10;
+  border-bottom: 1px solid var(--black10);
   height: 72px;
   width: 100%;
   align-items: center;

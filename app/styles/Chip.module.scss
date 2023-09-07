@@ -1,11 +1,9 @@
-@value black10, black15 from 'variables.scss';
-
 .chip {
   padding: 12px;
   border-radius: 99em;
-  background-color: black10;
+  background-color: var(--black10);
 }
 
 .chip:hover {
-  background-color: black15;
+  background-color: var(--black15);
 }
