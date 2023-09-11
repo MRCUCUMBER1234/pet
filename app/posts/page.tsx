@@ -1,7 +1,6 @@
 // import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
 
 /** Components */
-import { shallow } from 'zustand/shallow';
 import PostList from '../../entities/post/ui/PostList';
 import TagList from '../../entities/tagList';
 import Topic from '../../shared/ui/components/Topic';
