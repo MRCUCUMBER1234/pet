@@ -3,13 +3,15 @@
 import React, { useEffect, useState } from 'react';
 
 /** Styles */
-import styles from '../../../../app/styles/Form.module.scss';
+import styles from '../../../../app/styles/Search.module.scss';
 
 /** Components */
 import Input from '../../../../shared/ui/components/Input';
 
 /** Lib */
 import useDebounce from '../../../../shared/lib/useDebounce';
+
+/** Models */
 import { usePosts } from '../../../../entities/post/model/Post';
 
 const PostSearch = () => {

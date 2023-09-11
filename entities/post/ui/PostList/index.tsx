@@ -1,16 +1,17 @@
 'use client';
 
 import { useEffect } from 'react';
-import { shallow } from 'zustand/esm/shallow';
+import shallow from 'zustand/esm/shallow';
 
 /** Components */
 import ModulePost from '../../../modulePost/ui/ModulePost';
 
 /** Types */
-import { PostType } from '../../model';
+// import { PostType } from '../../model';
 import { usePosts } from '../../model/Post';
 import PostSearch from '../../../../feature/post/postSearch/ui/PostSearch';
 import Box from '../../../../shared/ui/layouts/Box';
+import PostSkeletonList from '../PostSkeletonList';
 
 export default function PostList() {
     const [posts, loading, getAllPosts] = usePosts((state) => [state.posts, state.loading, state.getAllPosts], shallow);
@@ -23,7 +24,7 @@ export default function PostList() {
         <Box width="100%" px={64} py={24}>
             <PostSearch />
             {loading ? (
-                <h3>Loading...</h3>
+                <PostSkeletonList />
             ) : (
                 <>
                     {posts.map(({ id, title, body }, index: number) => (
