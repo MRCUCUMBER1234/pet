@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { shallow } from 'zustand/esm/shallow';
 
 /** Components */
 import ModulePost from '../../../modulePost/ui/ModulePost';
@@ -8,7 +9,6 @@ import ModulePost from '../../../modulePost/ui/ModulePost';
 /** Types */
 import { PostType } from '../../model';
 import { usePosts } from '../../model/Post';
-import { shallow } from 'zustand/esm/shallow';
 import PostSearch from '../../../../feature/post/postSearch/ui/PostSearch';
 import Box from '../../../../shared/ui/layouts/Box';
 
