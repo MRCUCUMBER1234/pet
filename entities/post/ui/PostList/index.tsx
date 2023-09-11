@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import shallow from 'zustand/esm/shallow';
+import { shallow } from 'zustand/shallow';
 
 /** Components */
 import ModulePost from '../../../modulePost/ui/ModulePost';

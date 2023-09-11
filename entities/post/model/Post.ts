@@ -1,4 +1,5 @@
-import { create } from 'zustand';
+import { createWithEqualityFn } from 'zustand/traditional';
+import { shallow } from 'zustand/shallow';
 
 import { getAllPosts, getPostsBySearch } from '../services';
 
@@ -13,17 +14,20 @@ type UsePosts = {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export const usePosts = create<UsePosts>()((set) => ({
-    posts: [],
-    loading: false,
-    getAllPosts: async () => {
-        set({ loading: true });
-        const posts = await getAllPosts();
-        set({ posts, loading: false });
-    },
-    getPostsBySearch: async (term: string) => {
-        set({ loading: true });
-        const posts = await getPostsBySearch(term);
-        set({ loading: false, posts });
-    },
-}));
+export const usePosts = createWithEqualityFn<UsePosts>()(
+    (set) => ({
+        posts: [],
+        loading: false,
+        getAllPosts: async () => {
+            set({ loading: true });
+            const posts = await getAllPosts();
+            set({ posts, loading: false });
+        },
+        getPostsBySearch: async (term: string) => {
+            set({ loading: true });
+            const posts = await getPostsBySearch(term);
+            set({ loading: false, posts });
+        },
+    }),
+    shallow
+);
