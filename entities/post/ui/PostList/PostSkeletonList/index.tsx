@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-export default function PostSkeletonList() {
+function PostSkeletonList() {
     return (
         <ContentLoader height="90vh" width="100%">
             {new Array(5).fill(200).map((item, index) => (
@@ -9,3 +9,5 @@ export default function PostSkeletonList() {
         </ContentLoader>
     );
 }
+
+export default PostSkeletonList;

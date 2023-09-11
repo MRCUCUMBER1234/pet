@@ -12,7 +12,7 @@ type PostProps = {
     postId: string;
 };
 
-export default function Post({ post: { title, body }, writer: { name }, postId }: PostProps) {
+function Post({ post: { title, body }, writer: { name }, postId }: PostProps) {
     return (
         <Box flexDirection="column" gap={24} mx={64} my={64}>
             <BackArrow />
@@ -22,3 +22,5 @@ export default function Post({ post: { title, body }, writer: { name }, postId }
         </Box>
     );
 }
+
+export default Post;

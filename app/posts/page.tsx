@@ -1,7 +1,7 @@
 // import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
 
 /** Components */
-import PostList from '../../entities/post/ui/PostList';
+import { PostList } from '../../entities/post/ui';
 import TagList from '../../entities/tagList';
 import Topic from '../../shared/ui/components/Topic';
 import LinkAdapter from '../../shared/ui/components/LinkAdapter';
@@ -9,13 +9,6 @@ import LinkAdapter from '../../shared/ui/components/LinkAdapter';
 /** Layouts */
 import Box from '../../shared/ui/layouts/Box';
 import Button from '../../shared/ui/layouts/Button';
-
-/** Model */
-import { PostType } from '../../entities/post/model';
-import PostSearch from '../../feature/post/postSearch/ui/PostSearch';
-import { usePosts } from '../../entities/post/model/Post';
-
-import { getAllPosts } from '../../entities/post/services';
 
 // async function getPostsData() {
 //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -28,14 +21,7 @@ import { getAllPosts } from '../../entities/post/services';
 // }
 
 export default async function PostListPage() {
-    // const posts: PostType[] = await getPostsData();
     const chips = ['blue', 'red', 'yellow'];
-
-    // console.log('posts', posts);
-
-    // useEffect(() => {
-    //     getAllPosts();
-    // }, [getAllPosts]);
 
     return (
         <Box flexWrap="nowrap">

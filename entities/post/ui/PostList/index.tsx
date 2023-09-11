@@ -7,13 +7,12 @@ import { shallow } from 'zustand/shallow';
 import ModulePost from '../../../modulePost/ui/ModulePost';
 
 /** Types */
-// import { PostType } from '../../model';
 import { usePosts } from '../../model/Post';
-import PostSearch from '../../../../feature/post/postSearch/ui/PostSearch';
+import { PostSearch } from '../../../../feature/post/postSearch/ui';
 import Box from '../../../../shared/ui/layouts/Box';
-import PostSkeletonList from '../PostSkeletonList';
+import PostSkeletonList from './PostSkeletonList';
 
-export default function PostList() {
+function PostList() {
     const [posts, loading, getAllPosts] = usePosts((state) => [state.posts, state.loading, state.getAllPosts], shallow);
 
     useEffect(() => {
@@ -41,3 +40,5 @@ export default function PostList() {
         </Box>
     );
 }
+
+export default PostList;
