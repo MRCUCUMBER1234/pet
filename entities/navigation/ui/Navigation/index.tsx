@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState, memo } from 'react';
+import { usePathname } from 'next/navigation';
 
 import LinkAdapter from '../../../../shared/ui/components/LinkAdapter';
 import styles from '../../../../app/styles/Navigation.module.scss';
@@ -11,15 +12,15 @@ import useScroll from '../../../../shared/lib/window/useScroll';
 import { NavigationConfig } from '../../config';
 
 type NavigationProps = {
-    title: string;
+    pathname: string | null;
 };
 
 type NavigationListProps = NavigationProps;
 
-const NavigationList = ({ title }: NavigationListProps) => (
+const NavigationList = ({ pathname }: NavigationListProps) => (
     <>
         {Object.values(NavigationConfig).map(({ title: navigationTitle, to }) => (
-            <LinkAdapter key={navigationTitle} link={to} isActive={navigationTitle === title}>
+            <LinkAdapter key={navigationTitle} link={to} isActive={to === pathname}>
                 {navigationTitle}
             </LinkAdapter>
         ))}
@@ -29,7 +30,8 @@ const NavigationList = ({ title }: NavigationListProps) => (
 const MemoizedNavigationList = memo(NavigationList);
 
 const Navigation = () => {
-    const title = '';
+    const pathname = usePathname();
+
     const [isShowNavigation, setIsShowNavigation] = useState(true);
     const { y, lastY } = useScroll();
 
@@ -47,7 +49,7 @@ const Navigation = () => {
     return (
         <header className={`${styles.navigation} ${isShowNavigation ? '' : styles.navBarHidden}`}>
             <Image src={Dino} alt="Dino" width={20} height={20} placeholder="blur" />
-            <MemoizedNavigationList title={title} />
+            <MemoizedNavigationList pathname={pathname} />
         </header>
     );
 };

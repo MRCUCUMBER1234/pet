@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-shadow
 export enum TypographyVariantType {
     Body1 = 'body1',
     Body2 = 'body2',
