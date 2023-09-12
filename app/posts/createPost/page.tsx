@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { redirect } from 'next/navigation';
-import { shallow } from 'zustand/esm/shallow';
+import { shallow } from 'zustand/shallow';
 
 /** Components */
 import Form from '../../../shared/ui/layouts/Form';
