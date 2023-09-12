@@ -10,6 +10,7 @@ import Dino from '../../../../app/public/DinoSprites_vita.png';
 import useScroll from '../../../../shared/lib/window/useScroll';
 
 import { NavigationConfig } from '../../config';
+import cn from 'classnames';
 
 type NavigationProps = {
     pathname: string | null;
@@ -47,7 +48,7 @@ const Navigation = () => {
     }, [y, lastY]);
 
     return (
-        <header className={isShowNavigation ? '' : styles.headerHidden}>
+        <header className={cn(styles.header, { [styles.headerHidden]: !isShowNavigation })}>
             <div className={styles.navigation}>
                 <Image src={Dino} alt="Dino" width={20} height={20} placeholder="blur" />
                 <MemoizedNavigationList pathname={pathname} />

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { redirect } from 'next/navigation';
+import { shallow } from 'zustand/esm/shallow';
 
 /** Components */
 import Form from '../../../shared/ui/layouts/Form';
@@ -17,7 +18,6 @@ import { usePosts } from '../../../entities/post/model/post';
 
 /** Utils */
 import { useInput } from '../../../shared/lib/form';
-import { shallow } from 'zustand/esm/shallow';
 
 export default function Page() {
     const [loading, addPost] = usePosts((state) => [state.loading, state.addPost], shallow);
