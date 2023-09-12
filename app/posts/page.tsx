@@ -12,7 +12,6 @@ import Button from '../../shared/ui/layouts/Button';
 
 /** Styles */
 import styles from '../styles/PostsPage.module.scss';
-import { PostSearch } from '../../feature/post/postSearch/ui';
 
 // async function getPostsData() {
 //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
