@@ -11,7 +11,7 @@ import Box from '../../shared/ui/layouts/Box';
 import Button from '../../shared/ui/layouts/Button';
 
 /** Styles */
-import styles from '../../app/styles/PostsPage.module.scss';
+import styles from '../styles/PostsPage.module.scss';
 import { PostSearch } from '../../feature/post/postSearch/ui';
 
 // async function getPostsData() {
