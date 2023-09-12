@@ -13,13 +13,13 @@ type ModulePostProps = {
 };
 
 const ModulePost = ({ link, title, body, isLast = false }: ModulePostProps) => (
-    <LinkAdapter link={link}>
-        <Box flexDirection="column" styles={styles}>
+    <div className={styles.modulePost}>
+        <LinkAdapter link={link}>
             <Typography variant={TypographyVariantType.H2}>{title}</Typography>
-            <Typography>{body}</Typography>
+            <Typography variant={TypographyVariantType.Body2}>{body}</Typography>
             {!isLast && <Drawer />}
-        </Box>
-    </LinkAdapter>
+        </LinkAdapter>
+    </div>
 );
 
 export default ModulePost;

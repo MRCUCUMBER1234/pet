@@ -10,6 +10,10 @@ import LinkAdapter from '../../shared/ui/components/LinkAdapter';
 import Box from '../../shared/ui/layouts/Box';
 import Button from '../../shared/ui/layouts/Button';
 
+/** Styles */
+import styles from '../../app/styles/PostsPage.module.scss';
+import { PostSearch } from '../../feature/post/postSearch/ui';
+
 // async function getPostsData() {
 //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
 //         next: {
@@ -24,15 +28,15 @@ export default async function PostListPage() {
     const chips = ['blue', 'red', 'yellow'];
 
     return (
-        <Box flexWrap="nowrap">
-            <Box position="sticky" top={64} px={64}>
+        <div className={styles.container}>
+            <PostList />
+            <Box position="sticky" top={64} flexDirection="column" py={24} styles={{ maxWidth: '250px' }}>
                 <Topic text="Posts" />
                 <LinkAdapter link="/posts/createPost">
-                    <Button isIcon>{/* <PlusIcon /> */}+</Button> {/* TODO: change to svg */}
+                    <Button>Add post</Button>
                 </LinkAdapter>
+                <TagList chips={chips} />
             </Box>
-            <PostList />
-            <TagList chips={chips} />
-        </Box>
+        </div>
     );
 }

@@ -1,17 +1,25 @@
-.navigation {
-  display: flex;
-  gap: 12px;
+header {
+  padding: 0 24px;
   border-bottom: 1px solid var(--black10);
   height: 72px;
   width: 100%;
-  align-items: center;
-  padding: 32px 64px;
   position: fixed;
   backdrop-filter: blur(5px);
   z-index: 2;
   transition: transform 150ms ease-in-out;
+  display: flex;
+  justify-content: center;
 }
 
-.navigation.navBarHidden {
+
+header.headerHidden {
   transform: translateY(-100%);
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 1214px;
+  align-items: center;
 }

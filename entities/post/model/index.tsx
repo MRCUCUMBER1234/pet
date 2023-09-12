@@ -1,2 +1,2 @@
-export { type Post as PostType } from './types/Post';
-export * as postModel from './Post';
+export { type Post as PostType } from './types/post';
+export * as postModel from './post';

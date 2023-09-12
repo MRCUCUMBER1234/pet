@@ -1,4 +1,13 @@
 .main {
-  padding-top: 72px;
+  padding: 72px 24px 0;
   min-height: calc(100vh - 64px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  > div {
+    max-width: 1200px;
+    width: 100%;
+  }
+
 }

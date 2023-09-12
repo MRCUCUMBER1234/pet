@@ -7,10 +7,14 @@ import { shallow } from 'zustand/shallow';
 import ModulePost from '../../../modulePost/ui/ModulePost';
 
 /** Types */
-import { usePosts } from '../../model/Post';
-import { PostSearch } from '../../../../feature/post/postSearch/ui';
+import { usePosts } from '../../model/post';
+
+/** Layouts */
 import Box from '../../../../shared/ui/layouts/Box';
+
+/** Inner components */
 import PostSkeletonList from './PostSkeletonList';
+import { PostSearch } from '../../../../feature/post/postSearch/ui';
 
 function PostList() {
     const [posts, loading, getAllPosts] = usePosts((state) => [state.posts, state.loading, state.getAllPosts], shallow);
@@ -20,8 +24,10 @@ function PostList() {
     }, [getAllPosts]);
 
     return (
-        <Box width="100%" px={64} py={24}>
-            <PostSearch />
+        <Box width="100%" py={24} styles={{ maxWidth: '900px' }}>
+            <Box top={120} width="100%" position="sticky">
+                <PostSearch />
+            </Box>
             {loading ? (
                 <PostSkeletonList />
             ) : (

@@ -47,9 +47,11 @@ const Navigation = () => {
     }, [y, lastY]);
 
     return (
-        <header className={`${styles.navigation} ${isShowNavigation ? '' : styles.navBarHidden}`}>
-            <Image src={Dino} alt="Dino" width={20} height={20} placeholder="blur" />
-            <MemoizedNavigationList pathname={pathname} />
+        <header className={isShowNavigation ? '' : styles.headerHidden}>
+            <div className={styles.navigation}>
+                <Image src={Dino} alt="Dino" width={20} height={20} placeholder="blur" />
+                <MemoizedNavigationList pathname={pathname} />
+            </div>
         </header>
     );
 };

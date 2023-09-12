@@ -14,7 +14,7 @@ type FormProps = {
 };
 
 const Form = ({ onSubmit, children, title }: FormProps) => (
-    <Box gap={24} width="100%" px={64} my={64}>
+    <Box gap={24} width="100%">
         <Topic text={title} />
         <form className={styles.form} onSubmit={onSubmit}>
             {children}

@@ -14,11 +14,13 @@ type PostProps = {
 
 function Post({ post: { title, body }, writer: { name }, postId }: PostProps) {
     return (
-        <Box flexDirection="column" gap={24} mx={64} my={64}>
-            <BackArrow />
-            <p className={styles.post}>{`${postId} - ${title}`}</p>
-            <Typography>{body}</Typography>
-            <PostFooter name={name} />
+        <Box styles={{ width: '100%', justifyContent: 'flex-start' }}>
+            <Box styles={{ maxWidth: '900px', width: '100%', flexDirection: 'column', gap: '24px', marginTop: '24px' }}>
+                <BackArrow />
+                <p className={styles.post}>{`${postId} - ${title}`}</p>
+                <Typography>{body}</Typography>
+                <PostFooter name={name} />
+            </Box>
         </Box>
     );
 }
