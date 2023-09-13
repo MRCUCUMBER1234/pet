@@ -1,6 +1,11 @@
-// eslint-disable-next-line import/prefer-default-export
+const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
+// const API_BASE_URL = `${process.env.BASE_URL}/api`;
+const API_URLS = {
+    POSTS: '/posts',
+};
+
 export async function getAllPosts() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch(API_BASE_URL + API_URLS.POSTS);
 
     if (!response.ok) throw new Error('Unable to fetch posts :(');
 
@@ -8,7 +13,7 @@ export async function getAllPosts() {
 }
 
 export async function getPostsBySearch(term) {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${term}`);
+    const response = await fetch(`${API_BASE_URL}${API_URLS.POSTS}?q=${term}`);
 
     if (!response.ok) throw new Error('Unable to fetch posts :(');
 
@@ -16,7 +21,7 @@ export async function getPostsBySearch(term) {
 }
 
 export async function addPost(body) {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    const response = await fetch(API_BASE_URL + API_URLS.POSTS, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
