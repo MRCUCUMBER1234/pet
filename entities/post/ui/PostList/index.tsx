@@ -25,6 +25,7 @@ function PostList() {
         getAllPosts();
     }, [getAllPosts]);
 
+    // eslint-disable-next-line no-console
     console.log('APP_DOMAIN', APP_DOMAIN);
 
     return (
