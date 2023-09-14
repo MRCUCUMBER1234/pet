@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from 'react';
 
 /** Components */
-import Input from '../../../../../shared/ui/components/Input';
+import Input from '@/shared/ui/components/Input';
 
 /** Lib */
-import useDebounce from '../../../../../shared/lib/useDebounce';
+import useDebounce from '@/shared/lib/useDebounce';
 
 /** Models */
-import { usePosts } from '../../../../../entities/post/model/post';
+import { usePosts } from '@/entities/post/model/post';
 
 function PostSearch() {
     const getPostsBySearch = usePosts((state) => state.getPostsBySearch);

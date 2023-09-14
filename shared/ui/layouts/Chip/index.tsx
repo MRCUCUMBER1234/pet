@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import styles from '../../../../app/styles/Chip.module.scss';
+import styles from '@/app/styles/Chip.module.scss';
 
 type ChipProps = {
     children: ReactNode;

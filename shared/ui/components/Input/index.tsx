@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import styles from '../../../../app/styles/Input.module.scss';
+import styles from '@/app/styles/Input.module.scss';
 
 type InputProps = {
     name?: string;

@@ -17,21 +17,33 @@ type UsePosts = {
 export const usePosts = createWithEqualityFn<UsePosts>()(
     (set) => ({
         posts: [],
-        loading: false,
+        loading: true,
         getAllPosts: async () => {
             set({ loading: true });
-            const posts = await getAllPosts();
-            set({ posts, loading: false });
+            try {
+                const posts = await getAllPosts();
+                set({ posts, loading: false });
+            } catch (err) {
+                set({ loading: false });
+            }
         },
         getPostsBySearch: async (term: string) => {
             set({ loading: true });
-            const posts = await getPostsBySearch(term);
-            set({ loading: false, posts });
+            try {
+                const posts = await getPostsBySearch(term);
+                set({ loading: false, posts });
+            } catch (err) {
+                set({ loading: false });
+            }
         },
         addPost: async (post: PostType) => {
             set({ loading: true });
-            const createdPost = await addPost(post);
-            set((state) => ({ loading: false, posts: [createdPost, ...state.posts] }));
+            try {
+                const createdPost = await addPost(post);
+                set((state) => ({ loading: false, posts: [createdPost, ...state.posts] }));
+            } catch (err) {
+                set({ loading: false });
+            }
         },
     }),
     shallow

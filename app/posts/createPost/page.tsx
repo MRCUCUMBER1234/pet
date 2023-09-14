@@ -5,19 +5,19 @@ import { redirect } from 'next/navigation';
 import { shallow } from 'zustand/shallow';
 
 /** Components */
-import Form from '../../../shared/ui/layouts/Form';
-import Input from '../../../shared/ui/components/Input';
+import Form from '@/shared/ui/layouts/Form';
+import Input from '@/shared/ui/components/Input';
 
 /** Layouts */
-import Box from '../../../shared/ui/layouts/Box';
-import Button from '../../../shared/ui/layouts/Button';
+import Box from '@/shared/ui/layouts/Box';
+import Button from '@/shared/ui/layouts/Button';
 
 /** Models */
-import { usePosts } from '../../../entities/post/model/post';
-// import { postModel } from '../../../entities/post/model';
+import { usePosts } from '@/entities/post/model/post';
+// import { postModel } from '@/entities/post/model';
 
 /** Utils */
-import { useInput } from '../../../shared/lib/form';
+import { useInput } from '@/shared/lib/form';
 
 export default function Page() {
     const [loading, addPost] = usePosts((state) => [state.loading, state.addPost], shallow);

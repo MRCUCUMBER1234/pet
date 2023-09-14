@@ -1,9 +1,8 @@
-import LinkAdapter from '../../../../shared/ui/components/LinkAdapter';
-import Box from '../../../../shared/ui/layouts/Box';
-import Typography from '../../../../shared/ui/layouts/Typography';
-import Drawer from '../../../../shared/ui/components/Drawer';
-import { TypographyVariantType } from '../../../../shared/types';
-import styles from '../../../../app/styles/ModulePost.module.scss';
+import LinkAdapter from '@/shared/ui/components/LinkAdapter';
+import Typography from '@/shared/ui/layouts/Typography';
+import Drawer from '@/shared/ui/components/Drawer';
+import { TypographyVariantType } from '@/shared/types';
+import styles from '@/app/styles/ModulePost.module.scss';
 
 type ModulePostProps = {
     link: string;

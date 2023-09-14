@@ -1,14 +1,14 @@
 // import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
 
 /** Components */
-import { PostList } from '../../entities/post/ui';
-import TagList from '../../entities/tagList';
-import Topic from '../../shared/ui/components/Topic';
-import LinkAdapter from '../../shared/ui/components/LinkAdapter';
+import { PostList } from '@/entities/post/ui';
+import TagList from '@/entities/tagList';
+import Topic from '@/shared/ui/components/Topic';
+import LinkAdapter from '@/shared/ui/components/LinkAdapter';
 
 /** Layouts */
-import Box from '../../shared/ui/layouts/Box';
-import Button from '../../shared/ui/layouts/Button';
+import Box from '@/shared/ui/layouts/Box';
+import Button from '@/shared/ui/layouts/Button';
 
 /** Styles */
 import styles from '../styles/PostsPage.module.scss';

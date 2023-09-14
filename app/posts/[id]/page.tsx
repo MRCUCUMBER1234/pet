@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
 
-import { Post } from '../../../entities/post/ui';
-import { PostType } from '../../../entities/post/model';
-import WriterType from '../../../entities/writer/model';
+import { Post } from '@/entities/post/ui';
+import { PostType } from '@/entities/post/model';
+import WriterType from '@/entities/writer/model';
 
 type PostData = {
     post: PostType;

@@ -1,6 +1,6 @@
-import styles from '../../../../../app/styles/PostFooter.module.scss';
-import Typography from '../../../../../shared/ui/layouts/Typography';
-import Drawer from '../../../../../shared/ui/components/Drawer';
+import styles from '@/app/styles/PostFooter.module.scss';
+import Typography from '@/shared/ui/layouts/Typography';
+import Drawer from '@/shared/ui/components/Drawer';
 
 type PostFooterProps = {
     name: string;

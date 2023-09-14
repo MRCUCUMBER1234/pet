@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import { useEffect, useState, memo } from 'react';
 import { usePathname } from 'next/navigation';
+import cn from 'classnames';
 
-import LinkAdapter from '../../../../shared/ui/components/LinkAdapter';
-import styles from '../../../../app/styles/Navigation.module.scss';
-import Dino from '../../../../app/public/DinoSprites_vita.png';
-import useScroll from '../../../../shared/lib/window/useScroll';
+import LinkAdapter from '@/shared/ui/components/LinkAdapter';
+import styles from '@/app/styles/Navigation.module.scss';
+import Dino from '@/app/public/DinoSprites_vita.png';
+import useScroll from '@/shared/lib/window/useScroll';
 
 import { NavigationConfig } from '../../config';
-import cn from 'classnames';
 
 type NavigationProps = {
     pathname: string | null;
