@@ -4,9 +4,10 @@ import { Nunito } from 'next/font/google';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import { Metadata } from 'next';
 
-import Navigation from '../entities/navigation/ui/Navigation';
+import Navigation from '@/entities/navigation/ui/Navigation';
+import Footer from '@/widgets/ui/Footer';
+
 import styles from './styles/MainLayout.module.scss';
-import Footer from '../widgets/ui/Footer';
 
 const nunito: NextFont = Nunito({ subsets: ['latin'] }); // импортируется в виде функции
 

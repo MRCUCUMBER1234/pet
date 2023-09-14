@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import { shallow } from 'zustand/shallow';
 
+import { APP_DOMAIN } from '@/shared/consts';
+
 /** Components */
 import ModulePost from '../../../modulePost/ui/ModulePost';
 
@@ -22,6 +24,8 @@ function PostList() {
     useEffect(() => {
         getAllPosts();
     }, [getAllPosts]);
+
+    console.log('APP_DOMAIN', APP_DOMAIN);
 
     return (
         <Box width="100%" py={24} styles={{ maxWidth: '900px' }}>
