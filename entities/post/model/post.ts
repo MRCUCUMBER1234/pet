@@ -13,7 +13,6 @@ type UsePosts = {
     addPost: (post: PostType) => Promise<void>;
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export const usePosts = createWithEqualityFn<UsePosts>()(
     (set) => ({
         posts: [],

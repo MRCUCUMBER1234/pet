@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 
 import { posts } from './posts';
 
-// eslint-disable-next-line import/prefer-default-export
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
 

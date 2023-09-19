@@ -22,4 +22,9 @@
   width: 100%;
   max-width: 1214px;
   align-items: center;
+  justify-content: space-between;
+  & > div {
+    display: inherit;
+    gap: 12px;
+  }
 }

@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 
 import Navigation from '@/entities/navigation/ui/Navigation';
 import Footer from '@/widgets/ui/Footer';
+import { Providers } from '@/shared/lib/providers';
 
 import styles from './styles/MainLayout.module.scss';
 
@@ -24,9 +25,11 @@ export default function RootLayout({ children }: LayoutProps) {
     return (
         <html lang="en">
             <body className={nunito.className}>
-                <Navigation />
-                <main className={styles.main}>{children}</main>
-                <Footer />
+                <Providers>
+                    <Navigation />
+                    <main className={styles.main}>{children}</main>
+                    <Footer />
+                </Providers>
             </body>
         </html>
     );
