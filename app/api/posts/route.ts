@@ -10,7 +10,11 @@ export async function GET(req: Request) {
     let currentPosts = posts;
 
     if (query) {
-        currentPosts = posts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase()));
+        currentPosts = posts.filter(
+            (post) =>
+                post.title.toLowerCase().includes(query.toLowerCase()) ||
+                post.body.toLowerCase().includes(query.toLowerCase())
+        );
     }
 
     return NextResponse.json(currentPosts);

@@ -1,4 +1,4 @@
-import styles from '@/app/styles/Post.module.scss';
+import styles from '@/shared/styles/Post.module.scss';
 import Box from '@/shared/ui/layouts/Box';
 import Typography from '@/shared/ui/layouts/Typography';
 import BackArrow from '@/shared/ui/components/BackArrow';

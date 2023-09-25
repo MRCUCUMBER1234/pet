@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import cn from 'classnames';
 
-import styles from '@/app/styles/LinkAdapter.module.scss';
+import styles from '@/shared/styles/LinkAdapter.module.scss';
 
 type LinkAdapterProps = {
     link: string;

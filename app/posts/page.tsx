@@ -11,7 +11,7 @@ import Box from '@/shared/ui/layouts/Box';
 import Button from '@/shared/ui/layouts/Button';
 
 /** Styles */
-import styles from '../styles/PostsPage.module.scss';
+import styles from '@/shared/styles/PostsPage.module.scss';
 
 // async function getPostsData() {
 //     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -23,7 +23,7 @@ import styles from '../styles/PostsPage.module.scss';
 //     return response.json();
 // }
 
-export default async function PostListPage() {
+export default function PostListPage() {
     const chips = ['blue', 'red', 'yellow'];
 
     return (

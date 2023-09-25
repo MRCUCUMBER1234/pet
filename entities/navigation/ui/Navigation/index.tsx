@@ -7,8 +7,8 @@ import cn from 'classnames';
 import { useSession, signOut } from 'next-auth/react';
 
 import LinkAdapter from '@/shared/ui/components/LinkAdapter';
-import styles from '@/app/styles/Navigation.module.scss';
-import Dino from '@/app/public/DinoSprites_vita.png';
+import styles from '@/shared/styles/Navigation.module.scss';
+import Dino from '@/shared/public/DinoSprites_vita.png';
 import useScroll from '@/shared/lib/window/useScroll';
 import Box from '@/shared/ui/layouts/Box';
 import Button from '@/shared/ui/layouts/Button';

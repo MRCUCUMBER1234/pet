@@ -1,14 +1,13 @@
-import './styles/global.css';
 import { ReactNode } from 'react';
 import { Nunito } from 'next/font/google';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import { Metadata } from 'next';
 
+import '@/shared/styles/global.css';
 import Navigation from '@/entities/navigation/ui/Navigation';
 import Footer from '@/widgets/ui/Footer';
 import { Providers } from '@/shared/lib/providers';
-
-import styles from './styles/MainLayout.module.scss';
+import styles from '@/shared/styles/MainLayout.module.scss';
 
 const nunito: NextFont = Nunito({ subsets: ['latin'] }); // импортируется в виде функции
 

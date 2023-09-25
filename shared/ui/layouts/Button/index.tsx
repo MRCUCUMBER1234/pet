@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import cn from 'classnames';
 
-import styles from '@/app/styles/Button.module.scss';
+import styles from '@/shared/styles/Button.module.scss';
 
 type ButtonProps = {
     children: ReactNode;

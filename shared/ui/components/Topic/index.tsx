@@ -1,4 +1,4 @@
-import styles from '@/app/styles/Topic.module.scss';
+import styles from '@/shared/styles/Topic.module.scss';
 
 type TopicProps = {
     text: string;

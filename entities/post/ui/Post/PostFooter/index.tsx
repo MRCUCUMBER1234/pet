@@ -1,4 +1,4 @@
-import styles from '@/app/styles/PostFooter.module.scss';
+import styles from '@/shared/styles/PostFooter.module.scss';
 import Typography from '@/shared/ui/layouts/Typography';
 import Drawer from '@/shared/ui/components/Drawer';
 

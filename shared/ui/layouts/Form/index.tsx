@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import styles from '@/app/styles/Form.module.scss';
+import styles from '@/shared/styles/Form.module.scss';
 
 /** Components */
 import Topic from '../../components/Topic';

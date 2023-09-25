@@ -1,7 +1,7 @@
 import Topic from '@/shared/ui/components/Topic';
 import Box from '@/shared/ui/layouts/Box';
 import Chip from '@/shared/ui/layouts/Chip';
-import styles from '@/app/styles/TagList.module.scss';
+import styles from '@/shared/styles/TagList.module.scss';
 
 type TagListProps = {
     chips: string[];
