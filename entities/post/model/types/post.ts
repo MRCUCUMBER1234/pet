@@ -3,4 +3,5 @@ export type Post = {
     userId?: string /** writerId */;
     title: string;
     body: string;
+    tags: string[];
 };

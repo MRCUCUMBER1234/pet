@@ -1,41 +1,24 @@
-// import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
-
 /** Components */
 import { PostList } from '@/entities/post/ui';
-import TagList from '@/entities/tagList';
-import Topic from '@/shared/ui/components/Topic';
-import LinkAdapter from '@/shared/ui/components/LinkAdapter';
 
-/** Layouts */
-import Box from '@/shared/ui/layouts/Box';
-import Button from '@/shared/ui/layouts/Button';
+/** Services */
+import { getPosts } from '@/entities/post/services';
 
-/** Styles */
-import styles from '@/shared/styles/PostsPage.module.scss';
+export const revalidate = 5; // закешировано на 5 сек ISR
 
-// async function getPostsData() {
-//     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-//         next: {
-//             revalidate: 120,v // закешировано на 120 сек
-//         },
-//     });
-//
-//     return response.json();
-// }
+type SearchParams = {
+    q?: string;
+    tag?: string;
+};
 
-export default function PostListPage() {
-    const chips = ['blue', 'red', 'yellow'];
+export async function getPostsData(params: SearchParams) {
+    const [response] = await Promise.all([getPosts(params)]);
 
-    return (
-        <div className={styles.container}>
-            <PostList />
-            <Box position="sticky" top={64} flexDirection="column" py={24} styles={{ maxWidth: '250px' }}>
-                <Topic text="Posts" />
-                <LinkAdapter link="/posts/createPost">
-                    <Button>Add post</Button>
-                </LinkAdapter>
-                <TagList chips={chips} />
-            </Box>
-        </div>
-    );
+    return response;
+}
+
+export default async function PostListPage({ searchParams }: { searchParams: SearchParams }) {
+    const posts = await getPostsData(searchParams);
+
+    return <PostList posts={posts} />;
 }

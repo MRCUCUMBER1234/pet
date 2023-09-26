@@ -1,7 +1,7 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { shallow } from 'zustand/shallow';
 
-import { getAllPosts, getPostsBySearch, addPost } from '../services';
+import { getAllPosts, getPosts, addPost } from '../services';
 
 import { Post as PostType } from './types/post';
 
@@ -29,7 +29,7 @@ export const usePosts = createWithEqualityFn<UsePosts>()(
         getPostsBySearch: async (term: string) => {
             set({ loading: true });
             try {
-                const posts = await getPostsBySearch(term);
+                const posts = await getPosts({ q: term });
                 set({ loading: false, posts });
             } catch (err) {
                 set({ loading: false });
