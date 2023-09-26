@@ -11,7 +11,7 @@ type SearchParams = {
     tag?: string;
 };
 
-export async function getPostsData(params: SearchParams) {
+async function getPostsData(params: SearchParams) {
     const [response] = await Promise.all([getPosts(params)]);
 
     return response;

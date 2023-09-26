@@ -27,7 +27,7 @@ export default function Page() {
 
     const onSubmit = async () => {
         try {
-            await addPost({ id: '', userId: '', title: title.value, body: body.value });
+            await addPost({ id: '', userId: '', title: title.value, body: body.value, tags: [] });
             redirect('/posts');
         } catch (error) {
             console.error('There was an error!', error);
