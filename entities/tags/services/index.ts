@@ -7,7 +7,7 @@ const API_URLS = {
 };
 
 export async function getTags(): Promise<string[]> {
-    const response = await fetch(API_BASE_URL + API_URLS.TAGS);
+    const response = await fetch(API_BASE_URL + API_URLS.TAGS, { cache: 'no-store' });
 
     if (!response.ok) throw new Error('Unable to fetch tags :(');
 
