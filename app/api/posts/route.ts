@@ -6,7 +6,7 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
 
     const query = searchParams.get('q');
-    const tag = searchParams.get('tag');
+    // const tag = searchParams.get('tag');
 
     let currentPosts = posts;
 
@@ -18,9 +18,9 @@ export async function GET(req: Request) {
         );
     }
 
-    if (tag) {
-        currentPosts = posts.filter((post) => post.tags.includes(tag));
-    }
+    // if (tag) {
+    //     currentPosts = posts.filter((post) => post.tags.includes(tag));
+    // }
 
     return NextResponse.json(currentPosts);
 }
