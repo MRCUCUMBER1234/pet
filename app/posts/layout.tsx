@@ -6,7 +6,7 @@ import Box from '@/shared/ui/layouts/Box';
 import Topic from '@/shared/ui/components/Topic';
 import LinkAdapter from '@/shared/ui/components/LinkAdapter';
 import Button from '@/shared/ui/layouts/Button';
-import { Tags } from '@/entities/tags';
+// import { Tags } from '@/entities/tags';
 
 type LayoutProps = {
     children: ReactNode;
@@ -26,8 +26,7 @@ export default async function PostsLayout({ children }: LayoutProps) {
                 <LinkAdapter link="/posts/createPost">
                     <Button>Add post</Button>
                 </LinkAdapter>
-                {/* @ts-expect-error Server Component */}
-                <Tags />
+                {/* <Tags /> */}
             </Box>
         </div>
     );
