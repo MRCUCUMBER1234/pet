@@ -12,7 +12,7 @@ type SearchParams = {
 };
 
 async function getPostsData(params: SearchParams) {
-    const [response] = await Promise.all([getPosts(params)]);
+    const response = await getPosts(params);
 
     return response;
 }
